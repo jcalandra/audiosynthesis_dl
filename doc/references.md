@@ -11,7 +11,7 @@
 <p><strong>WaveNet : A Generative Model For Raw Audio</strong><a href="https://arxiv.org/pdf/1609.03499.pdf">https://arxiv.org/pdf/1609.03499.pdf</a></p>
 </li>
 <li>
-<p><strong>Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders :</strong><br>
+<p><strong>Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders</strong><br>
 <a href="https://arxiv.org/pdf/1704.01279.pdf">https://arxiv.org/pdf/1704.01279.pdf</a> – en lecture<br>
 <a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/">https://deepmind.com/blog/wavenet-generative-model-raw-audio/</a></p>
 </li>
@@ -56,7 +56,12 @@
 <ul>
 <li>
 <p><strong>Github WaveNet</strong><br>
-<a href="https://github.com/ibab/tensorflow-wavenet">https://github.com/ibab/tensorflow-wavenet</a></p>
+WaveNet implementation :<br>
+<a href="https://github.com/ibab/tensorflow-wavenet">https://github.com/ibab/tensorflow-wavenet</a><br>
+Magenta :<br>
+<a href="https://github.com/tensorflow/magenta">https://github.com/tensorflow/magenta</a><br>
+NSynth demo :<br>
+<a href="https://github.com/tensorflow/magenta-demos/blob/master/jupyter-notebooks/NSynth.ipynb">https://github.com/tensorflow/magenta-demos/blob/master/jupyter-notebooks/NSynth.ipynb</a></p>
 </li>
 <li>
 <p><strong>Nicolas Etcheverry’s project</strong><br>
@@ -111,11 +116,15 @@
 <li>
 <p><a href="https://towardsdatascience.com/deep-learning-4-embedding-layers-f9a02d55ac12">https://towardsdatascience.com/deep-learning-4-embedding-layers-f9a02d55ac12</a></p>
 </li>
-</ul>
+<li>
 <p><strong>Attention mechanism</strong><br>
 <a href="https://github.com/spro/practical-pytorch/blob/master/seq2seq-translation/seq2seq-translation.ipynb">https://github.com/spro/practical-pytorch/blob/master/seq2seq-translation/seq2seq-translation.ipynb</a></p>
+</li>
+<li>
 <p><strong>Latent Variable</strong><br>
 <a href="https://www.theanalysisfactor.com/what-is-a-latent-variable/">https://www.theanalysisfactor.com/what-is-a-latent-variable/</a></p>
+</li>
+</ul>
 <h2 id="labs-projects--culture">Labs, Projects &amp; Culture</h2>
 <ul>
 <li>
