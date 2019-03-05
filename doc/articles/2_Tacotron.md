@@ -9,7 +9,8 @@
 <h2 id="introduction-and-problematic">Introduction and Problematic</h2>
 <p>A need for <strong>minimal human annotation</strong> : less laborious feature engineering + the adaptation to new data is easier.<br>
 Preference for a <strong>single model</strong> over a multi-stage model as it avoid the accumulation of the error of each component.</p>
-<p>Tacotron is based on <strong>seq2seq</strong> with <strong>attention paradigm</strong>.</p>
+<p>Tacotron is based on a <strong>seq2seq</strong> model (=encoder/decoder) with <strong>attention paradigm</strong>.</p>
+<p>As opposed to WaveNet, Tacotron model is based on spectrograms. To not lose information about the phase position in the frame, the <strong>Griffin-Lim algorithm</strong> is used to reconstruct the waves. However the algorithm is not perfect, resulting in phase distortion.</p>
 <h2 id="principle">Principle</h2>
 <p>Tacotron takes characters as input and output raw spectrogram. With also audio as input, the initialisation can be random.</p>
 <p><img src="https://pythonawesome.com/content/images/2018/09/Tacotron-pytorch.jpg" alt=""></p>
