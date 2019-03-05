@@ -12,8 +12,7 @@
 </li>
 <li>
 <p><strong>Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders</strong><br>
-<a href="https://arxiv.org/pdf/1704.01279.pdf">https://arxiv.org/pdf/1704.01279.pdf</a> – en lecture<br>
-<a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/">https://deepmind.com/blog/wavenet-generative-model-raw-audio/</a></p>
+<a href="https://arxiv.org/pdf/1704.01279.pdf">https://arxiv.org/pdf/1704.01279.pdf</a> – en lecture</p>
 </li>
 <li>
 <p><strong>Neural Music Synthesis For Flexible Timbre Control</strong><br>
@@ -25,7 +24,7 @@
 </li>
 <li>
 <p><strong>Tacotron: A Fully End-to-End Text-To-Speech Synthesis Model</strong><br>
-<a href="https://arxiv.org/pdf/1703.10135.pdf">https://arxiv.org/pdf/1703.10135.pdf</a> – en lecture</p>
+<a href="https://arxiv.org/pdf/1703.10135.pdf">https://arxiv.org/pdf/1703.10135.pdf</a></p>
 </li>
 <li>
 <p><strong>Describing Multimedia Content using Attention-based Encoder–Decoder Networks</strong><br>
@@ -33,11 +32,9 @@
 </li>
 <li>
 <p><strong>Natural TTS Synthesis By Conditioning WaveNet on Mel Spectrogram Predictions</strong><br>
-<a href="https://arxiv.org/pdf/1712.05884.pdf">https://arxiv.org/pdf/1712.05884.pdf</a> – a lire</p>
+<a href="https://arxiv.org/pdf/1712.05884.pdf">https://arxiv.org/pdf/1712.05884.pdf</a><br>
+For a better understanding of Neural Networks :</p>
 </li>
-</ul>
-<p>For a better understanding of Neural Networks :</p>
-<ul>
 <li>
 <p><strong>Deep Residual Learning for Image Recognition</strong><br>
 <a href="https://arxiv.org/pdf/1512.03385.pdf">https://arxiv.org/pdf/1512.03385.pdf</a></p>
@@ -66,6 +63,17 @@ NSynth demo :<br>
 <li>
 <p><strong>Nicolas Etcheverry’s project</strong><br>
 <a href="https://github.com/etcheverry/transferotron">https://github.com/etcheverry/transferotron</a></p>
+</li>
+</ul>
+<h2 id="vulgarisation-articles">Vulgarisation articles</h2>
+<ul>
+<li>
+<p><strong>TTS history</strong><br>
+<a href="https://becominghuman.ai/into-a-better-speech-synthesis-technology-29411b64f2a2">https://becominghuman.ai/into-a-better-speech-synthesis-technology-29411b64f2a2</a></p>
+</li>
+<li>
+<p><strong>Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders</strong><br>
+<a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/">https://deepmind.com/blog/wavenet-generative-model-raw-audio/</a></p>
 </li>
 </ul>
 <h2 id="definition-articles-">Definition articles :</h2>
