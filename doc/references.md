@@ -44,6 +44,19 @@ For a better understanding of Neural Networks :</p>
 <a href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf">https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf</a></p>
 </li>
 </ul>
+<blockquote>
+<p>Further articles bellow</p>
+</blockquote>
+<ul>
+<li><strong>Neural Discrete Representation Learning (VQ-VAE)</strong><br>
+<a href="https://arxiv.org/pdf/1711.00937.pdf">https://arxiv.org/pdf/1711.00937.pdf</a></li>
+<li><strong>Generating Interpretable Images with Controllable Structure (comparison GAN vs PixelRNN)</strong><br>
+<a href="https://openreview.net/pdf?id=Hyvw0L9el">https://openreview.net/pdf?id=Hyvw0L9el</a></li>
+<li><strong>FiLM: Visual Reasoning with a General Conditioning Layer</strong><br>
+<a href="https://arxiv.org/pdf/1709.07871.pdf">https://arxiv.org/pdf/1709.07871.pdf</a></li>
+<li><strong>Deep Autoregressive Networks</strong><br>
+<a href="https://arxiv.org/pdf/1310.8499.pdf">https://arxiv.org/pdf/1310.8499.pdf</a></li>
+</ul>
 <h2 id="reports-">Reports :</h2>
 <ul>
 <li><strong>Nicolas Etcheverry’s internship</strong><br>
@@ -61,6 +74,10 @@ NSynth demo :<br>
 <a href="https://github.com/tensorflow/magenta-demos/blob/master/jupyter-notebooks/NSynth.ipynb">https://github.com/tensorflow/magenta-demos/blob/master/jupyter-notebooks/NSynth.ipynb</a></p>
 </li>
 <li>
+<p><strong>Github RNN</strong><br>
+<a href="https://github.com/soroushmehr/sampleRNN_ICLR2017">https://github.com/soroushmehr/sampleRNN_ICLR2017</a></p>
+</li>
+<li>
 <p><strong>Nicolas Etcheverry’s project</strong><br>
 <a href="https://github.com/etcheverry/transferotron">https://github.com/etcheverry/transferotron</a></p>
 </li>
@@ -74,6 +91,16 @@ NSynth demo :<br>
 <li>
 <p><strong>Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders</strong><br>
 <a href="https://deepmind.com/blog/wavenet-generative-model-raw-audio/">https://deepmind.com/blog/wavenet-generative-model-raw-audio/</a></p>
+</li>
+<li>
+<p><strong>PixelRNN</strong></p>
+</li>
+<li>
+<p><a href="https://github.com/tensorflow/magenta/blob/master/magenta/reviews/pixelrnn.md">https://github.com/tensorflow/magenta/blob/master/magenta/reviews/pixelrnn.md</a></p>
+</li>
+<li>
+<p><strong>SampleRNN</strong><br>
+<a href="http://deepsound.io/samplernn_first.html">http://deepsound.io/samplernn_first.html</a></p>
 </li>
 </ul>
 <h2 id="definition-articles-">Definition articles :</h2>
@@ -132,7 +159,12 @@ NSynth demo :<br>
 <p><strong>Latent Variable</strong><br>
 <a href="https://www.theanalysisfactor.com/what-is-a-latent-variable/">https://www.theanalysisfactor.com/what-is-a-latent-variable/</a></p>
 </li>
+<li>
+<p><strong>Autoencoders</strong><br>
+<a href="https://colinraffel.com/talks/vector2018few.pdf">https://colinraffel.com/talks/vector2018few.pdf</a></p>
+</li>
 </ul>
+<h2 id="videos--yt">Videos &amp; YT</h2>
 <h2 id="labs-projects--culture">Labs, Projects &amp; Culture</h2>
 <ul>
 <li>
@@ -148,5 +180,10 @@ NSynth demo :<br>
 <p><strong>MatraLab</strong><br>
 <a href="http://matralab.hexagram.ca/">http://matralab.hexagram.ca/</a></p>
 </li>
+</ul>
+<h2 id="hardware--computing">Hardware &amp; Computing</h2>
+<ul>
+<li><strong>A Full Hardware Guide to Deep Learning</strong><br>
+<a href="http://timdettmers.com/2018/12/16/deep-learning-hardware-guide/">http://timdettmers.com/2018/12/16/deep-learning-hardware-guide/</a></li>
 </ul>
 
