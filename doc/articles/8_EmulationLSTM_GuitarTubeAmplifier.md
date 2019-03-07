@@ -4,6 +4,8 @@
 ---
 
 <h1 id="real-time-emulation-of-parametric-guitar-tube-amplifier-with-long-short-term-memory-neural-network">Real Time Emulation of Parametric Guitar Tube Amplifier with Long Short Term Memory Neural Network</h1>
+<p>Resume of the following article :<br>
+<a href="https://arxiv.org/pdf/1804.07145.pdf">https://arxiv.org/pdf/1804.07145.pdf</a></p>
 <h2 id="introduction">Introduction</h2>
 <p><strong>Problematic :</strong><br>
 Musicians like  the sound of tube amplifiers as it sounds warmer and more dynamically than solid state (full transistors) amplifiers. However tube amplifiers are bulky, expensive and fragile. There is a need then to emulate these amplifiers. Some are already existing but not that much efficient and none are modelised using neural networks.<br>
