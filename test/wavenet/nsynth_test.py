@@ -57,7 +57,7 @@ fname1 = sys.argv[1] # de la forme '../data/pinkfloyd_extrait1.wav'
 sample_length = 32000
 sr = 16000
 audio1, encoding1 = load_encoding(fname1, sample_length)
-audio2, encoding2 = load_encoding(fname2, sample_length)
+#audio2, encoding2 = load_encoding(fname2, sample_length)
 
 ## Comment and uncomment the following part as needed
 ## ENCODING & DECODING
