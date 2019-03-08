@@ -52,20 +52,21 @@ def timestretch(encoding, factor):
 
 # main
 fname1 = sys.argv[1] # de la forme '../data/pinkfloyd_extrait1.wav'
-fname1 = sys.argv[2]
-#TODO : gerer l'erreur si pas de type .wav
+# fname2 = sys.argv[2]
+# TODO : gerer l'erreur si pas de type .wav
 sample_length = 32000
 sr = 16000
 audio1, encoding1 = load_encoding(fname1, sample_length)
 audio2, encoding2 = load_encoding(fname2, sample_length)
 
+## Comment and uncomment the following part as needed
 ## ENCODING & DECODING
 
-# show_encoding(audio1, encoding1)
-# decoding(fname1, sample_length, sr, encoding1)
-# show_encoding(audio1, encoding1)
+show_encoding(audio1, encoding1)
+decoding(fname1, sample_length, sr, encoding1)
+show_encoding(audio1, encoding1)
 
-## FOR TIMESTRETCHING (decomment if needed)
+## TIMESTRETCHING
 
 # show_encoding(audio1, encoding1)
 # encoding_slower = timestretch(encoding1, 1.5)
@@ -76,15 +77,15 @@ audio2, encoding2 = load_encoding(fname2, sample_length)
 # show_encoding(audio1, encoding_slower)
 # show_encoding(audio1, encoding_faster)
 
-## FOR INTERPOLATION
-enc_mix = (enc1 + enc2) / 2.0
+## INTERPOLATION
+#enc_mix = (enc1 + enc2) / 2.0
 
-fig, axs = plt.subplots(3, 1, figsize=(10, 7))
-axs[0].plot(encoding1[0]);
-axs[0].set_title('Encoding 1')
-axs[1].plot(encoding2[0]);
-axs[1].set_title('Encoding 2')
-axs[2].plot(enc_mix[0]);
-axs[2].set_title('Average')
+# fig, axs = plt.subplots(3, 1, figsize=(10, 7))
+# axs[0].plot(encoding1[0]);
+# axs[0].set_title('Encoding 1')
+# axs[1].plot(encoding2[0]);
+# axs[1].set_title('Encoding 2')
+# axs[2].plot(enc_mix[0]);
+# axs[2].set_title('Average')
 
-decoding(fname1+fname2, sample_length, sr, enc_mix)
+# decoding(fname1+fname2, sample_length, sr, enc_mix)
