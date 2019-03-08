@@ -7,7 +7,7 @@
 <p>Resume of the following article :<br>
 <a href="https://arxiv.org/pdf/1811.00334.pdf">https://arxiv.org/pdf/1811.00334.pdf</a></p>
 <h2 id="introduction">Introduction</h2>
-<p><strong>Problematc :</strong><br>
+<p><strong>Problematic :</strong><br>
 Difficulties to reproduce analogic sounds.<br>
 In this article the researchers tries to reproduce the effects from the Fender Bassman 56F-A vacuum-tube amplifier.</p>
 <p>Two main approaches to virtual analog modeling :</p>
@@ -23,5 +23,9 @@ In this article the researchers tries to reproduce the effects from the Fender B
 <p><strong>WaveNet architecture :</strong><br>
 2 main parts : a stack of dilated causal convolution layers (nonlinear filter bank) where the output of each conv layer is used as input to a fully connected post-processing module (fully-connected neural  network.</p>
 <p><img src="https://www.i-programmer.info/images/stories/News/2018/Nov/A/fender1.jpg" alt=""></p>
+<p>Instead of giving the output y[n] by modeling a conditional probability over the previous values, the model is trained to predict the current output given a certain number of past input samples and the current input.<br>
+It gives the formula :<br>
+ŷ[n,teta] = f(x[n], . . . , x[n - N], teta)<br>
+where N is the receptive field of the model, f is a nonlinear transformation and teta are the learned network parameters.</p>
 <h2 id="results">Results</h2>
 
