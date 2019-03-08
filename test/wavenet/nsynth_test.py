@@ -51,17 +51,40 @@ def timestretch(encoding, factor):
     return np.array(timestretches)
 
 # main
-fname = sys.argv[1] # de la forme '../data/pinkfloyd_extrait1.wav'
+fname1 = sys.argv[1] # de la forme '../data/pinkfloyd_extrait1.wav'
+fname1 = sys.argv[2]
 #TODO : gerer l'erreur si pas de type .wav
 sample_length = 32000
 sr = 16000
-audio, encoding = load_encoding(fname, sample_length)
-show_encoding(audio, encoding)
-encoding_slower = timestretch(encoding, 1.5)
-encoding_faster = timestretch(encoding, 0.5)
-decoding(fname, sample_length, sr, encoding)
-decoding(fname, sample_length, sr, encoding_slower)
-decoding(fname, sample_length, sr, encoding_faster)
-show_encoding(audio, encoding)
-show_encoding(audio, encoding_slower)
-show_encoding(audio, encoding_faster)
+audio1, encoding1 = load_encoding(fname1, sample_length)
+audio2, encoding2 = load_encoding(fname2, sample_length)
+
+## ENCODING & DECODING
+
+# show_encoding(audio1, encoding1)
+# decoding(fname1, sample_length, sr, encoding1)
+# show_encoding(audio1, encoding1)
+
+## FOR TIMESTRETCHING (decomment if needed)
+
+# show_encoding(audio1, encoding1)
+# encoding_slower = timestretch(encoding1, 1.5)
+# encoding_faster = timestretch(encoding1, 0.5)
+
+# decoding(fname1, sample_length, sr, encoding_slower)
+# decoding(fname1, sample_length, sr, encoding_faster)
+# show_encoding(audio1, encoding_slower)
+# show_encoding(audio1, encoding_faster)
+
+## FOR INTERPOLATION
+enc_mix = (enc1 + enc2) / 2.0
+
+fig, axs = plt.subplots(3, 1, figsize=(10, 7))
+axs[0].plot(encoding1[0]);
+axs[0].set_title('Encoding 1')
+axs[1].plot(encoding2[0]);
+axs[1].set_title('Encoding 2')
+axs[2].plot(enc_mix[0]);
+axs[2].set_title('Average')
+
+decoding(fname1+fname2, sample_length, sr, enc_mix)
