@@ -33,12 +33,12 @@ def decoding(fname, sample_length, sr, encoding):
                                  sample_length=sample_length,
                                  sr=sr)
 
-def show_encoding(audio, encoding):
+"""def show_encoding(audio, encoding):
     fig, axs = plt.subplots(2, 1, figsize=(10, 5))
     axs[0].plot(audio);
     axs[0].set_title('Audio Signal')
     axs[1].plot(encoding[0]);
-    axs[1].set_title('NSynth Encoding')
+    axs[1].set_title('NSynth Encoding')"""
 
 def timestretch(encoding, factor):
     min_encoding, max_encoding = encoding.min(), encoding.max()
@@ -62,9 +62,9 @@ audio2, encoding2 = load_encoding(fname2, sample_length)
 ## Comment and uncomment the following part as needed
 ## ENCODING & DECODING
 
-show_encoding(audio1, encoding1)
+#show_encoding(audio1, encoding1)
 decoding(fname1, sample_length, sr, encoding1)
-show_encoding(audio1, encoding1)
+#show_encoding(audio1, encoding1)
 
 ## TIMESTRETCHING
 
