@@ -81,6 +81,8 @@ NSynth demo :<br>
 <li><strong>Deep Learning for Tube Amplifier Emulation</strong><br>
 <a href="http://research.spa.aalto.fi/publications/papers/icassp19-deep/">http://research.spa.aalto.fi/publications/papers/icassp19-deep/</a></li>
 </ul>
+<p>-<strong>ANS Synthesizer</strong><br>
+<a href="http://www.theremin.ru/archive/ans.htm">http://www.theremin.ru/archive/ans.htm</a></p>
 <h2 id="definition-articles-">Definition articles :</h2>
 <ul>
 <li>
@@ -157,6 +159,9 @@ NSynth demo :<br>
 <a href="http://matralab.hexagram.ca/">http://matralab.hexagram.ca/</a></p>
 </li>
 </ul>
+<h2 id="demos">Demos</h2>
+<p>-<strong>PixelSynth</strong><br>
+<a href="https://ojack.github.io/articles/pixelsynth/index.html">https://ojack.github.io/articles/pixelsynth/index.html</a></p>
 <h2 id="hardware--computing">Hardware &amp; Computing</h2>
 <ul>
 <li><strong>A Full Hardware Guide to Deep Learning</strong><br>
