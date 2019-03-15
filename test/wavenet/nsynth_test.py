@@ -29,9 +29,9 @@ def decoding(fname, sample_length, sr, encoding):
         encoding,
         save_paths=['gen_' + fname],
         samples_per_save=sample_length)
-    synthesis = utils.load_audio('gen_' + fname,
-                                 sample_length=sample_length,
-                                 sr=sr)
+    #synthesis = utils.load_audio('gen_' + fname,
+    #                            sample_length=sample_length,
+    #                             sr=sr)
 
 """def show_encoding(audio, encoding):
     fig, axs = plt.subplots(2, 1, figsize=(10, 5))
