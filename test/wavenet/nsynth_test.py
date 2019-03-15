@@ -12,7 +12,6 @@ from magenta.models.nsynth.wavenet import fastgen
 from IPython.display import Audio
 from skimage.transform import resize
 
-
 def load_encoding(fname, sample_length=None, sr=16000, ckpt='model.ckpt-200000'):
     '''sound loading'''
     audio = utils.load_audio(fname, sample_length=sample_length, sr=sr)
@@ -27,7 +26,7 @@ def load_encoding(fname, sample_length=None, sr=16000, ckpt='model.ckpt-200000')
 def decoding(fname, sample_length, sr, encoding):
     fastgen.synthesize(
         encoding,
-        save_paths=['gen_' + fname],
+        save_paths=['gen_' + fname[fname.rfind('/') + 1:] ],
         samples_per_save=sample_length)
     #synthesis = utils.load_audio('gen_' + fname,
     #                            sample_length=sample_length,
