@@ -81,8 +81,17 @@ NSynth demo :<br>
 <li><strong>Deep Learning for Tube Amplifier Emulation</strong><br>
 <a href="http://research.spa.aalto.fi/publications/papers/icassp19-deep/">http://research.spa.aalto.fi/publications/papers/icassp19-deep/</a></li>
 </ul>
-<p>-<strong>ANS Synthesizer</strong><br>
+<h3 id="about-drawing-sounds-">About drawing sounds :</h3>
+<ul>
+<li>
+<p><strong>ANS Synthesizer</strong><br>
 <a href="http://www.theremin.ru/archive/ans.htm">http://www.theremin.ru/archive/ans.htm</a></p>
+</li>
+<li>
+<p><strong>Soundpainting</strong><br>
+<a href="http://www.soundpainting.com/soundpainting-2-fr/">http://www.soundpainting.com/soundpainting-2-fr/</a></p>
+</li>
+</ul>
 <h2 id="definition-articles-">Definition articles :</h2>
 <ul>
 <li>
