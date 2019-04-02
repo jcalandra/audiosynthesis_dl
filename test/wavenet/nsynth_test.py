@@ -20,7 +20,7 @@ def load_encoding(fname, sample_length=None, sr=16000, ckpt='model.ckpt-200000')
     '''encoding'''
     encoding = fastgen.encode(audio, ckpt, sample_length)
     print("(batch_size, time_steps, dimensions) :",encoding.shape)
-    np.save(fname + '.npy', encoding)
+    np.save(fname[fname.rfind('/') + 1:] + '.npy', encoding)
     return audio, encoding
 
 def decoding(fname, sample_length, sr, encoding):
