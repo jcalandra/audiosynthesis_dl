@@ -23,7 +23,7 @@ The folder is organised in the following way :
   - **definitions** : contains a few definitions about key words.
   - **references** : list all the references used in this project.
   
-- **test** contains the already existing code that has been tested. It contains the following folders :
+- **test** contains the already existing code that has been tested.
   
 - **data** contains a few data necessary to test the different neural networks.
 
