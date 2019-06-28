@@ -7,11 +7,10 @@ This internship is about doing a state of the art about the various methods of m
 
 This project especially consists in associating a sound with one or more characteristics defined by audio descriptors with a picture drawn by a composer. The long-term goal is to allow the composer to develop his own composition language in order to associate it with sounds from some effects banks.
 
-I am first interested in pitch, and I will propose as input to a Convolutional Neural Network trained for classification a database of couples:
-- an image drawn by the composer,
-- the label of the sound extract corresponding to the associated note pitch. 
-After training, we want to obtain a sound for a given image at the input of the network.
-Validation tests will be conducted by verifying that the sounds obtained correspond to the desired descriptors.
+In this study, I'm interested into pitch, volume and tone color features, and I will propose as input to a Convolutional Neural Network trained for classification a database composed of :
+- images drawn by the composer,
+- three labels for each pictures, corresponding to the features in the labels associated to sound features.
+After the training of the neural network, we want to obtain a sound for a given image at the input of the network.
 
 
 ## Organisation of the project
@@ -23,8 +22,10 @@ The folder is organised in the following way :
   - **definitions** : contains a few definitions about key words.
   - **references** : list all the references used in this project.
   
-- **test** contains the already existing code that has been tested.
-  
-- **data** contains a few data necessary to test the different neural networks.
+- **data** contains a few data necessary to train and test the differents neural networks.
+  - **img** : is divided in **train**, **validation**, **testgen** and **test** folders. The three first folders are empty and filled by running Pict2Audio_multineural.ipynb. **test** contains some already drawn pictures to test the neural networks.
+  - **snd** : contains sounds provided by the nsynth dataset developped by Magenta, the Google Team of Research and Developpment in Artificial Intelligence for music and sounds. These sounds are divided in **train**, **validation** and **test** datasets.
 
 - **src** contains the code implemented to answer the principal problematic of this project.
+  - **interface** : contains the main files to implement a paint interface and to link it with the neural networks
+  - **networks** : contains in **img** the code of the neural networks that aim to recognize features in the pictures, contains in **snd** the code of the neural networks that aim to recognize features in sounds? 
