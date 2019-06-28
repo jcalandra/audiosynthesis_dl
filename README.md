@@ -23,9 +23,9 @@ The folder is organised in the following way :
   - **references** : list all the references used in this project.
   
 - **data** contains a few data necessary to train and test the differents neural networks.
-  - **img** : is divided in **train**, **validation**, **testgen** and **test** folders. The three first folders are empty and filled by running Pict2Audio_multineural.ipynb. **test** contains some already drawn pictures to test the neural networks.
+  - **img** : is divided in **train**, **validation**, **testgen** and **test** folders. The three first folders are empty and filled by running Pict2Audio_multineural.ipynb. **Test** contains some already drawn pictures to test the neural networks.
   - **snd** : contains sounds provided by the nsynth dataset developped by Magenta, the Google Team of Research and Developpment in Artificial Intelligence for music and sounds. These sounds are divided in **train**, **validation** and **test** datasets.
 
 - **src** contains the code implemented to answer the principal problematic of this project.
-  - **interface** : contains the main files to implement a paint interface and to link it with the neural networks
-  - **networks** : contains in **img** the code of the neural networks that aim to recognize features in the pictures, contains in **snd** the code of the neural networks that aim to recognize features in sounds? 
+  - **interface** : contains the main files to implement a paint interface and its links with the neural networks.
+  - **networks** : contains in **img** the code of the neural networks that aim to recognize features in the pictures. Contains in **snd** the code of the neural networks that aim to recognize features in sounds. 
