@@ -49,7 +49,7 @@ class Paint(object):
         self.c = Canvas(self.root, bg='white', width=400, height=400)
         self.c.grid(row=4, columnspan=5)
 
-        self.base = PIL.ImageTk.PhotoImage(file = "base_quadrillage.png")
+        self.base = PIL.ImageTk.PhotoImage(file = "../../data/base_quadrillage.png")
         self.c.create_image(400, 400, image = self.base, anchor = SE)
 
         self.img = PIL.Image.new('RGB', (400, 400), 'white')
