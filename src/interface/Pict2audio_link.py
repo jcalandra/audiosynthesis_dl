@@ -1,52 +1,50 @@
-def importing_libraries():
-    print('[INFO] loading the librairies...')
-    import librosa
-    import cv2
-    import numpy as np
-    import csv
-    import IPython
-    import tensorflow as tf
-    import keras
-    from keras.models import load_model
-    import audio2csv
-    print('tensorflow:', tf.__version__)
-    print('keras:', keras.__version__)
+import cv2
+import csv
+import IPython.display
+import tensorflow as tf
+import keras
+import numpy as np
+from keras.models import load_model
+import audio2csv
+print('tensorflow:', tf.__version__)
+print('keras:', keras.__version__)
+
 
 def process_data(image):
     fimg = image.astype('float32')
     norm_img = fimg / 255
     return norm_img
 
+
 def match_algorithm(y, file):
     next(file)
     for row in file:
         i = 0
-        while (y[i] == int(row[i+1])):
-            i = i+1;
-            if (i == 3):
+        while y[i] == int(row[i+1]):
+            i = i+1
+            if i == 2:
                 name = row[0]
                 print(name)
-                return(name)
+                return name
     print("Can't find any sound from the Library that match with the given picture")
-    return('ERROR')
+    return 'ERROR'
 
 
 def main():
-    NB_CARACTERISTICS = 3
-    importing_libraries() #TODO : sortir de la fonction avec une machine qui compile tensorflow
 
     # 1) Load the Pict2Audio_multineural network
-    #TODO : éventuellement les charger séparemment
+    # TODO : éventuellement les charger séparemment
     print('[INFO] Loading Neural Networks...')
-    model_pitch = load_model('model_pitch.h5')
-    model_thick = load_model('model_thick.h5')
-    model_color = load_model('model_color.h5')
+    path_models = "../../models/img/"
+    model_pitch = load_model(path_models+'model_pitch.h5')
+    model_thick = load_model(path_models+'model_thick.h5')
+    model_color = load_model(path_models+'model_color.h5')
 
     # 2) Load a tab or csv with all sound labellised
     print('[INFO] Loading the csv file...')
-    audio2csv.main() #TODO : idem, charger séparémment sur l'interface paint
-    csvfile = open('audioLib.csv', newline='')
-    filereader = csv.reader(csvfile, delimiter=';')
+    audio2csv.main()  # TODO : idem, charger séparémment sur l'interface paint
+    csv_file = open('audioLib.csv', newline='')
+    file_reader = csv.reader(csv_file, delimiter=';')
 
     # 3) draw the picture OK
     #    - exec paint.py
@@ -58,9 +56,9 @@ def main():
     #    - load the specific picture with the special name
 
     print('[INFO] loading the picture...')
-    img_tab = np.empty((0,400,400,3))
+    img_tab = np.empty((0, 400, 400, 3))
     img = cv2.imread('img2analyse.png')
-    img_tab = np.concatenate((img_tab,np.reshape(img,(1,400,400,3))),axis=0)
+    img_tab = np.concatenate((img_tab, np.reshape(img, (1, 400, 400, 3))), axis=0)
 
     x_img = process_data(img_tab)
 
@@ -76,13 +74,18 @@ def main():
     # 5) match the label of the picture with the labels of the sound dataset
     #    - search algorithm in a tab
     print('[INFO] Running algorithm...')
-    sound = match_algorithm(y_img, filereader)
+    sound = match_algorithm(y_img, file_reader)
 
-    # 6) play the adequated sound
+    # 6) play the adequate sound
     #    - take the name in the tab,
     #    - look for the sound with this name in the lib
     #    - play the sound
-    if (sound != 'ERROR'):
-        IPython.display.Audio((sound))
-    else :
+
+    # TODO : trouver le son le plus proche avec une notification expliquant qu'il ne s'agit pas d'une correspondance
+    #  exacte
+    # TODO : afficher le bouton display ?
+    if sound != 'ERROR':
+        print('sound displaying')
+        IPython.display.Audio(sound)
+    else:
         print('No sound can be displayed')

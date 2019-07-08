@@ -5,18 +5,22 @@ from tkinter.colorchooser import askcolor
 import PIL
 from PIL import Image, ImageDraw, ImageTk
 import Pict2audio_link
-print('PIL',Image.VERSION)
+# PICT2AUDIO graphic interface
+# Graphic interface to draw pictures assimilated to sounds
 
-### PICT2AUDIO graphic interface
-### Graphic interface to draw picutres assimilated to sounds
-
-#TODO :
+# TODO :
+#       Pour l'interface :
+#       1) faire un bouton pour charger les réseaux de neurones
+#       2) faire un bouton pour créer le CSV
+#       3) faire un bouton "rejouer le son"
+#       4) nettoyer le code
+#       Pour l'appli paint :
 #       1) trouver comment faire une gomme pour l'affichage
 #       2) laisser une possibilite de sauvegarde avec ou sans grille.
 #       3) creer les boutons load_neural networks
 
 
-class Paint(object):
+class Paint:
 
     DEFAULT_PEN_SIZE = 10.0
     DEFAULT_COLOR = 'black'
@@ -25,7 +29,6 @@ class Paint(object):
         self.root = Tk()
         self.root.title('Pict2Audio')
 
-        ## --- title
         title = Label(self.root, text="Pict2Audio", font=("Helvetica", 24))
         title.grid(row=0, columnspan=5)
         subtitle = Label(self.root, text="From Pictures to Sounds", font=("Helvetica", 16))
@@ -95,7 +98,6 @@ class Paint(object):
         self.eraser_on = False
         self.color = askcolor(color=self.color)[1]
         self.activate_button(self.pen_button)
-
 
     def use_eraser(self):
         self.activate_button(self.eraser_button, eraser_mode=True)
