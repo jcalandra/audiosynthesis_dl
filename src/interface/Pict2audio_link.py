@@ -1,11 +1,10 @@
 import cv2
 import csv
 import IPython.display
+import numpy as np
 import tensorflow as tf
 import keras
-import numpy as np
-from keras.models import load_model
-import audio2csv
+import load_models
 print('tensorflow:', tf.__version__)
 print('keras:', keras.__version__)
 
@@ -22,7 +21,7 @@ def match_algorithm(y, file):
         i = 0
         while y[i] == int(row[i+1]):
             i = i+1
-            if i == 2:
+            if i == 3:
                 name = row[0]
                 print(name)
                 return name
@@ -32,17 +31,13 @@ def match_algorithm(y, file):
 
 def main():
 
-    # 1) Load the Pict2Audio_multineural network
-    # TODO : éventuellement les charger séparemment
-    print('[INFO] Loading Neural Networks...')
-    path_models = "../../models/img/"
-    model_pitch = load_model(path_models+'model_pitch.h5')
-    model_thick = load_model(path_models+'model_thick.h5')
-    model_color = load_model(path_models+'model_color.h5')
+    # 1) Load the Pict2Audio_multineural network (they are loaded before in load_moedls.py)
+    model_pitch = load_models.model_level
+    model_thick = load_models.model_thick
+    model_color = load_models.model_color
 
     # 2) Load a tab or csv with all sound labellised
     print('[INFO] Loading the csv file...')
-    audio2csv.main()  # TODO : idem, charger séparémment sur l'interface paint
     csv_file = open('audioLib.csv', newline='')
     file_reader = csv.reader(csv_file, delimiter=';')
 
@@ -86,6 +81,6 @@ def main():
     # TODO : afficher le bouton display ?
     if sound != 'ERROR':
         print('sound displaying')
-        IPython.display.Audio(sound)
+        IPython.display.Audio(sound, autoplay=True)
     else:
         print('No sound can be displayed')

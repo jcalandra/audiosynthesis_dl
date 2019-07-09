@@ -5,6 +5,8 @@ from tkinter.colorchooser import askcolor
 import PIL
 from PIL import Image, ImageDraw, ImageTk
 import Pict2audio_link
+import audio2csv
+
 # PICT2AUDIO graphic interface
 # Graphic interface to draw pictures assimilated to sounds
 
@@ -61,7 +63,7 @@ class Paint:
         self.draw = ImageDraw.Draw(self.img)
 
         self.ent = Entry(self.root)
-        self.ent.grid(row=5, columnspan=3)
+        self.ent.grid(row=5, column=0, columnspan=2)
         self.ent.insert(0, "filename (w/ extention)")
 
         self.save_button = Button(self.root, text="save", command=self.use_save, fg="green")
@@ -139,4 +141,5 @@ class Paint:
 
 
 if __name__ == '__main__':
+    audio2csv.main()
     Paint()

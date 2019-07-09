@@ -1,8 +1,8 @@
 # Importing the python libraries
 import glob
 import numpy as np
-from keras.models import load_model
 import librosa
+import load_models
 
 # Some needed functions
 # TODO : factoriser le code
@@ -53,11 +53,10 @@ def main():
     print('[INFO] Importing the python library...')
 
     # Importation of sounds libraries
-    path = "../../"
-    path_snd = "data/bdd_snd/"
-    snd_train = glob.glob(path + path_snd + "snd_train/*.wav")  # train_files
-    snd_validation = glob.glob(path + path_snd + "snd_validation/*.wav")  # validation_files
-    snd_test = glob.glob(path + path_snd + "snd_test/*.wav")  # test_files
+    path_snd = "../../data/bdd_snd/"
+    snd_train = glob.glob(path_snd + "snd_train/*.wav")  # train_files
+    snd_validation = glob.glob(path_snd + "snd_validation/*.wav")  # validation_files
+    snd_test = glob.glob(path_snd + "snd_test/*.wav")  # test_files
 
     snd = snd_train + snd_validation + snd_test
     nb_snd = len(snd)
@@ -65,14 +64,13 @@ def main():
     # Data processing for the neural network
     print('[INFO] generation of mel spectrograms...')
     x_tab = generate_mels(snd)
-    print(x_tab.shape)
 
     # Loading the needed neural networks
     print('[INFO] Loading Sounds Neural Networks...')
     path_models = "models/snd/"
-    model_pitch = load_model(path + path_models + "model_pitchsnd.h5")
-    model_vol = load_model(path + path_models + "model_thicksnd.h5")
-    model_tone = load_model(path + path_models + "model_colorsnd.h5")
+    model_pitch = load_models.model_pitch
+    model_vol = load_models.model_vol
+    model_tone = load_models.model_tone
 
     # Creation of the CSV file
     print('[INFO] Creation of the CSV file...')
