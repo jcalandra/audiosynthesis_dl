@@ -7,15 +7,15 @@ from PIL import Image, ImageDraw, ImageTk
 import Pict2audio_link
 import audio2csv
 
+
 # PICT2AUDIO graphic interface
 # Graphic interface to draw pictures assimilated to sounds
 
 # TODO :
 #       Pour l'interface :
-#       1) faire un bouton pour charger les réseaux de neurones
-#       2) faire un bouton pour créer le CSV
-#       3) faire un bouton "rejouer le son"
-#       4) nettoyer le code
+#       0) retirer les modèles du git /!\
+#       1) faire jouer le son correctement
+#       2) nettoyer le code
 #       Pour l'appli paint :
 #       1) trouver comment faire une gomme pour l'affichage
 #       2) laisser une possibilite de sauvegarde avec ou sans grille.
@@ -23,19 +23,21 @@ import audio2csv
 
 
 class Paint:
-
-    DEFAULT_PEN_SIZE = 10.0
     DEFAULT_COLOR = 'black'
+    DEFAULT_NAME = 'default'
 
     def __init__(self):
+        # Creation of the window
         self.root = Tk()
         self.root.title('Pict2Audio')
 
+        # Title
         title = Label(self.root, text="Pict2Audio", font=("Helvetica", 24))
         title.grid(row=0, columnspan=5)
         subtitle = Label(self.root, text="From Pictures to Sounds", font=("Helvetica", 16))
         subtitle.grid(row=1, columnspan=5)
 
+        # Buttons for the drawing interface
         self.pen_button = Button(self.root, text='pen', command=self.use_pen)
         self.pen_button.grid(row=3, column=0)
 
@@ -51,17 +53,18 @@ class Paint:
         self.choose_size_button = Scale(self.root, from_=1, to=30, orient=HORIZONTAL)
         self.choose_size_button.grid(row=3, column=4)
 
+        # Drawing interface
         self.c = Canvas(self.root, bg='white', cursor="cross", width=400, height=400)
         self.c.grid(row=4, columnspan=5)
         path_base = "../../data/base_quadrillage.png"
-        self.base = PIL.ImageTk.PhotoImage(file = path_base)
-        self.c.create_image(400, 400, image = self.base, anchor = SE)
+        self.base = PIL.ImageTk.PhotoImage(file=path_base)
+        self.c.create_image(400, 400, image=self.base, anchor=SE)
 
-        # self.img = PIL.Image.new('RGB', (400, 400), 'white')
         self.img = Image.open(path_base)
         self.rgb_img = self.img.convert('RGB')
         self.draw = ImageDraw.Draw(self.img)
 
+        # Saving and neural network buttons
         self.ent = Entry(self.root)
         self.ent.grid(row=5, column=0, columnspan=2)
         self.ent.insert(0, "filename (w/ extention)")
@@ -72,10 +75,7 @@ class Paint:
         self.sound_button = Button(self.root, text="GET SOUND", command=self.get_sound, fg="maroon3")
         self.sound_button.grid(row=6, columnspan=5)
 
-        self.setup()
-        self.root.mainloop()
-
-    def setup(self):
+        # Initialisation for functions
         self.old_x = None
         self.old_y = None
         self.line_width = self.choose_size_button.get()
@@ -84,12 +84,16 @@ class Paint:
         self.active_button = self.pen_button
         self.c.bind('<B1-Motion>', self.paint)
         self.c.bind('<ButtonRelease-1>', self.reset)
+        self.image_name = self.DEFAULT_NAME
+
+        # Mainloop
+        self.root.mainloop()
 
     def use_pen(self):
         self.activate_button(self.pen_button)
 
     def use_clear(self):
-        self.c.create_image(400, 400, image = self.base, anchor = SE)
+        self.c.create_image(400, 400, image=self.base, anchor=SE)
         path_base = "../../data/base_quadrillage.png"
         self.img = Image.open(path_base)
         self.draw = ImageDraw.Draw(self.img)
@@ -105,16 +109,17 @@ class Paint:
         self.activate_button(self.eraser_button, eraser_mode=True)
 
     def use_save(self):
-        self.imagename = self.ent.get()
-        filename = self.imagename +'.png'
+        self.image_name = self.ent.get()
+        filename = self.image_name + '.png'
         self.img.save(filename)
         print(filename + " has been saved")
 
     def get_sound(self):
+        self.activate_button(self.sound_button)
         self.img.save("img2analyse.png")
         Pict2audio_link.main()
         # supprimer éventuellement l'image
-        self.activate_button(self.sound_button)
+        self.activate_button(self.pen_button)
 
     def activate_button(self, some_button, eraser_mode=False):
         self.active_button.config(relief=RAISED)
@@ -126,13 +131,15 @@ class Paint:
         self.line_width = self.choose_size_button.get()
         paint_color = self.color
         if self.old_x and self.old_y:
-            if self.eraser_on :
+            if self.eraser_on:
                 paint_color = "white"
-            self.c.create_line(self.old_x, self.old_y, event.x, event.y,
-                               width=self.line_width, fill=paint_color, capstyle=ROUND, smooth=TRUE, splinesteps=36)
-            self.draw.line([(self.old_x, self.old_y), (event.x, event.y)], width=self.line_width, fill=paint_color, joint='curve')
-            Offset = (self.line_width-3)/2
-            self.draw.ellipse((self.old_x-Offset,self.old_y-Offset, self.old_x+Offset,self.old_y+Offset), fill=paint_color)
+            self.c.create_line(self.old_x, self.old_y, event.x, event.y, width=self.line_width,
+                               fill=paint_color, capstyle=ROUND, smooth=TRUE, splinesteps=36)
+            self.draw.line([(self.old_x, self.old_y), (event.x, event.y)], width=self.line_width,
+                           fill=paint_color, joint='curve')
+            offset = (self.line_width - 3) / 2
+            self.draw.ellipse((self.old_x - offset, self.old_y - offset, self.old_x + offset, self.old_y + offset),
+                              fill=paint_color)
         self.old_x = event.x
         self.old_y = event.y
 
@@ -140,6 +147,10 @@ class Paint:
         self.old_x, self.old_y = None, None
 
 
-if __name__ == '__main__':
+def main():
     audio2csv.main()
     Paint()
+
+
+if __name__ == '__main__':
+    main()

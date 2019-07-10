@@ -7,7 +7,7 @@ import load_models
 # Some needed functions
 # TODO : factoriser le code
 SAMPLE_RATE = 16000
-INPUT_LENGTH = SAMPLE_RATE*4
+INPUT_LENGTH = SAMPLE_RATE * 4
 batch_size = 32
 NB_MEL = 320
 
@@ -16,7 +16,7 @@ def process_audio_mel(audio, sample_rate=SAMPLE_RATE):
     """ Generate a mel spectrogram in dB given an `audio` """
     maxvalue = 10000
     mel_spec = librosa.feature.melspectrogram(y=audio, sr=sample_rate, n_mels=NB_MEL)
-    mel_db = (librosa.power_to_db(mel_spec, ref=maxvalue) + 80)/80
+    mel_db = (librosa.power_to_db(mel_spec, ref=maxvalue) + 80) / 80
     # TODO :trouver une valeur adaptée pour MAX : on voudrait dans l'idéal tout entre 0 et 1.
     return mel_db
 
@@ -25,9 +25,9 @@ def load_audio_file(file_path, input_length=INPUT_LENGTH):
     """ Extend/Reduce an audio `file_path` to the given `input_length` then generate its mel spectrogram """
     data = librosa.core.load(file_path, sr=SAMPLE_RATE)[0]  # sr=16000
     if len(data) > input_length:
-        max_offset = len(data)-input_length
+        max_offset = len(data) - input_length
         offset = np.random.randint(max_offset)
-        data = data[offset:(input_length+offset)]
+        data = data[offset:(input_length + offset)]
     else:
         if input_length > len(data):
             max_offset = input_length - len(data)
@@ -66,8 +66,6 @@ def main():
     x_tab = generate_mels(snd)
 
     # Loading the needed neural networks
-    print('[INFO] Loading Sounds Neural Networks...')
-    path_models = "models/snd/"
     model_pitch = load_models.model_pitch
     model_vol = load_models.model_vol
     model_tone = load_models.model_tone
@@ -76,10 +74,10 @@ def main():
     print('[INFO] Creation of the CSV file...')
 
     headers = [
-         u'Audio_names',
-         u'label_pitch',
-         u'label_vol',
-         u'label_tone'
+        u'Audio_names',
+        u'label_pitch',
+        u'label_vol',
+        u'label_tone'
     ]
 
     # remplir avec les labels correspondants
