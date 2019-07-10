@@ -1,6 +1,8 @@
 import cv2
 import csv
-import IPython.display
+from pydub import AudioSegment
+from pydub.playback import play
+import winsound
 import numpy as np
 import tensorflow as tf
 import keras
@@ -81,6 +83,8 @@ def main():
     # TODO : afficher le bouton display ?
     if sound != 'ERROR':
         print('sound displaying')
-        IPython.display.Audio(sound, autoplay=True)
+        # song = AudioSegment.from_file(sound, format='wav')
+        # play(song)
+        winsound.PlaySound(sound, winsound.SND_FILENAME)
     else:
         print('No sound can be displayed')

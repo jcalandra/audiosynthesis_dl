@@ -13,13 +13,12 @@ import audio2csv
 
 # TODO :
 #       Pour l'interface :
-#       0) retirer les modèles du git /!\
 #       1) faire jouer le son correctement
 #       2) nettoyer le code
 #       Pour l'appli paint :
 #       1) trouver comment faire une gomme pour l'affichage
 #       2) laisser une possibilite de sauvegarde avec ou sans grille.
-#       3) creer les boutons load_neural networks
+#       3) interface d'entrainement et de chargement des réseaux
 
 
 class Paint:
@@ -133,8 +132,10 @@ class Paint:
         if self.old_x and self.old_y:
             if self.eraser_on:
                 paint_color = "white"
+            # Draw the line on the interface
             self.c.create_line(self.old_x, self.old_y, event.x, event.y, width=self.line_width,
                                fill=paint_color, capstyle=ROUND, smooth=TRUE, splinesteps=36)
+            # Draw a line on background for the saved picture
             self.draw.line([(self.old_x, self.old_y), (event.x, event.y)], width=self.line_width,
                            fill=paint_color, joint='curve')
             offset = (self.line_width - 3) / 2
