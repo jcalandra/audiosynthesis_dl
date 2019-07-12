@@ -1,13 +1,10 @@
 import cv2
 import csv
-from pydub import AudioSegment
-from pydub.playback import play
 import winsound
 import numpy as np
 import tensorflow as tf
 import keras
 import load_models
-
 print('tensorflow:', tf.__version__)
 print('keras:', keras.__version__)
 
@@ -72,19 +69,16 @@ def main():
     #    - search algorithm in a tab
     print('[INFO] Running algorithm...')
     sound = match_algorithm(y_img, file_reader)
+    default = "../../data/bdd_snd/la440.wav"
 
     # 6) play the adequate sound
     #    - take the name in the tab,
     #    - look for the sound with this name in the lib
     #    - play the sound
 
-    # TODO : trouver le son le plus proche avec une notification expliquant qu'il ne s'agit pas d'une correspondance
-    #  exacte
-    # TODO : afficher le bouton display ?
     if sound != 'ERROR':
         print('sound displaying')
-        # song = AudioSegment.from_file(sound, format='wav')
-        # play(song)
         winsound.PlaySound(sound, winsound.SND_FILENAME)
     else:
-        print('No sound can be displayed')
+        # a default sound is played if no correspondence in the database
+        winsound.PlaySound(default, winsound.SND_FILENAME)
