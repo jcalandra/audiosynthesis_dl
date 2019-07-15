@@ -15,4 +15,4 @@ NB_VERSION_TRAIN = 2
 NB_VERSION_VALIDATION = 1
 NB_VERSION_TESTGEN = 1
 
-img_path = "../../../data/bdd_img/"
+img_path = "../../../../data/bdd_img/"

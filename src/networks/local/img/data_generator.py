@@ -105,4 +105,4 @@ def generate_pict(nb_version_pict, folder, outline_value, pic_type):
                     print(name)
 
                     # save the picture in google colab :
-                    cv2.imwrite('../../../data/bdd_img/img_' + folder + '/' + name, line_image)
+                    cv2.imwrite(gv.img_path + 'img_' + folder + '/' + name, line_image)
