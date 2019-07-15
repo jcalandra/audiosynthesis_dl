@@ -13,8 +13,9 @@ import audio2csv
 
 # TODO :
 #       Pour l'interface :
-#       1) faire jouer le son correctement
-#       2) nettoyer le code
+#       1) nettoyer le code ->
+#          - factoriser les fonctions communes à l'interface et aux réseaux de neurones
+#          - remplacer les valeurs concernant les images par les global_values
 #       Pour l'appli paint :
 #       1) trouver comment faire une gomme pour l'affichage
 #       2) laisser une possibilite de sauvegarde avec ou sans grille.

@@ -30,12 +30,12 @@ def match_algorithm(y, file):
 
 
 def main():
-    # 1) Load the Pict2Audio_multineural network (they are loaded before in load_moedls.py)
+    # 1) Load the Pict2Audio_img network (they are loaded before in load_models.py)
     model_pitch = load_models.model_level
     model_thick = load_models.model_thick
     model_color = load_models.model_color
 
-    # 2) Load a tab or csv with all sound labellised
+    # 2) Load a tab or csv with all sound labelised
     print('[INFO] Loading the csv file...')
     csv_file = open('audioLib.csv', newline='')
     file_reader = csv.reader(csv_file, delimiter=';')
@@ -46,7 +46,7 @@ def main():
 
     # in the interface, button to display the following algorithm
 
-    # 1) take the picture drawn
+    # 4) take the picture drawn
     #    - load the specific picture with the special name
 
     print('[INFO] loading the picture...')
@@ -56,7 +56,7 @@ def main():
 
     x_img = process_data(img_tab)
 
-    # 4) classify the picture
+    # 5) classify the picture
     #    - Put as entry of the neural network
     #    - 3 labels are obtained : pitch & thick & color
     print('[INFO] Prediction of the classes...')

@@ -80,14 +80,14 @@ def main():
         u'label_tone'
     ]
 
-    # remplir avec les labels correspondants
+    # filling with the corresponding labels
     labels_pitch = model_pitch.predict_classes(x_tab)
     labels_vol = model_vol.predict_classes(x_tab)
     labels_tone = model_tone.predict_classes(x_tab)
 
-    # modifier label
     labels = [[snd[i], str(labels_pitch[i]), str(labels_vol[i]), str(labels_tone[i])] for i in range(nb_snd)]
 
+    # writing on the csv file
     f = open('audioLib.csv', 'w')
     line_header = ";".join(headers) + "\n"
     f.write(line_header)
