@@ -88,7 +88,7 @@ y_train_pitch, y_validation_pitch = network.categorical(y_train_pitch, y_validat
 
 print('[INFO] generating PITCH NETWORK...')
 model_pitch, hist_pitch = network.architecture(x_train, y_train_pitch, x_validation, y_validation_pitch, NB_PITCH,
-                                               'model_pitch', opt='adam', nb_epoch=3)
+                                               'model_pitch', opt='adam', nb_epoch=100)
 network.plot(hist_pitch)
 
 del y_train_pitch
@@ -109,7 +109,7 @@ y_train_thick, y_validation_thick = network.categorical(y_train_thick, y_validat
 print('[INFO] training THICK NETWORK...')
 opt_thick = keras.optimizers.Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
 model_thick, hist_thick = network.architecture(x_train, y_train_thick, x_validation, y_validation_thick, NB_THICK,
-                                               'model_thick', opt=opt_thick, nb_epoch=3)
+                                               'model_thick', opt=opt_thick, nb_epoch=100)
 network.plot(hist_thick)
 
 del y_train_thick
@@ -131,7 +131,7 @@ print('[INFO] training COLOR NETWORK...')
 
 opt_color = keras.optimizers.Adam(lr=0.000035, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
 model_color, hist_color = network.architecture(x_train, y_train_color, x_validation, y_validation_color, NB_COLOR,
-                                               'model_color', opt=opt_color, nb_epoch=3)
+                                               'model_color', opt=opt_color, nb_epoch=100)
 network.plot(hist_color)
 
 del y_train_color
