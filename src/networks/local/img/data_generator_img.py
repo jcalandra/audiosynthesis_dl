@@ -1,6 +1,6 @@
 import numpy as np
 import cv2
-import global_values as gv
+import global_values_img as gv
 
 # LOADING THE BASELINE
 print('[INFO] loading the baseline...')

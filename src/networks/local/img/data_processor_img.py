@@ -1,6 +1,6 @@
 import numpy as np
 import random
-import global_values as gv
+import global_values_img as gv
 from keras.preprocessing import image
 
 

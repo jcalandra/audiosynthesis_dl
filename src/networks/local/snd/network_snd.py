@@ -2,8 +2,8 @@ from __future__ import print_function
 import matplotlib.pyplot as plt
 import keras
 from keras.models import Sequential
-from keras.layers import Dense, Activation, BatchNormalization, Dropout, Conv2D, MaxPooling2D, Flatten
 from keras import callbacks
+from keras.layers import Dense, Dropout, Activation, BatchNormalization, Conv2D, MaxPooling2D, Flatten
 
 
 def categorical(y_train, y_validation, nb_dense):
@@ -23,24 +23,32 @@ def architecture(x_train, y_train, x_validation, y_validation, nb_dense, saving_
     model.add(BatchNormalization(axis=-1))
     model.add(MaxPooling2D(pool_size=(3, 3), strides=None, padding='valid', data_format=None))
 
-    # (CONV => RELU) * 1 => POOL
+    # (CONV => RELU) * 2 => POOL
+    model.add(Conv2D(filters=64, kernel_size=(3, 3), strides=1, padding='valid', activation='relu'))
+    model.add(BatchNormalization(axis=-1))
     model.add(Conv2D(filters=64, kernel_size=(3, 3), strides=1, padding='valid', activation='relu'))
     model.add(BatchNormalization(axis=-1))
     model.add(MaxPooling2D(pool_size=(2, 2), strides=None, padding='valid', data_format=None))
 
-    # (CONV => RELU) * 1 => POOL
+    # (CONV => RELU) * 2 => POOL
+    model.add(Conv2D(filters=128, kernel_size=(3, 3), strides=1, padding='valid', activation='relu'))
+    model.add(BatchNormalization(axis=-1))
     model.add(Conv2D(filters=128, kernel_size=(3, 3), strides=1, padding='valid', activation='relu'))
     model.add(BatchNormalization(axis=-1))
     model.add(MaxPooling2D(pool_size=(2, 2), strides=None, padding='valid', data_format=None))
+    model.add(Dropout(rate=0.2))
 
-    # (CONV => RELU) * 1 => POOL
+    # (CONV => RELU) * 2 => POOL
+    model.add(Conv2D(filters=256, kernel_size=(3, 3), strides=1, padding='valid', activation='relu'))
+    model.add(BatchNormalization(axis=-1))
     model.add(Conv2D(filters=256, kernel_size=(3, 3), strides=1, padding='valid', activation='relu'))
     model.add(BatchNormalization(axis=-1))
     model.add(MaxPooling2D(pool_size=(2, 2), strides=None, padding='valid', data_format=None))
+    model.add(Dropout(rate=0.2))
 
     # first (and only) set of FC => RELU layers
     model.add(Flatten())
-    model.add(Dense(64))
+    model.add(Dense(1024))
     model.add(Activation("relu"))
     model.add(BatchNormalization())
     model.add(Dropout(rate=0.5))
@@ -68,7 +76,7 @@ def plot(hist):
     plt.title('model accuracy')
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
-    plt.legend(['pitch train', 'pitch validation'], loc='lower right')
+    plt.legend(['train', 'validation'], loc='lower right')
     plt.show()
 
     # summarize history for loss
@@ -77,5 +85,5 @@ def plot(hist):
     plt.title('model loss')
     plt.ylabel('loss')
     plt.xlabel('epoch')
-    plt.legend(['pitch train', 'pitch validation'], loc='upper right')
+    plt.legend(['train', 'validation'], loc='upper right')
     plt.show()
