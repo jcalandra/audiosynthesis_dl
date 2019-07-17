@@ -22,7 +22,7 @@ image features.
 
 After the training of the neural networks, an algorithm is run to obtain a sound from the 
 composer's sound bank for a given image drawn by the composer.
-An interface is developed to let the composer draw watever he wants and run the algorithm.
+An interface is developed to let the composer draw whatever he wants and run the algorithm.
 
 ## Organisation of the project
 
@@ -34,20 +34,20 @@ are read and studied for this project. it contains the following documents :
   - **definitions** : contains a few definitions about key words.
   - **references** : list all the references used in this project.
   
-- **data** contains a few data necessary to train and test the differents neural networks.
+- **data** contains a few data necessary to train and test the different neural networks.
   - **img** : is divided in **train**, **validation**, **testgen** and **test** folders. 
-  The three first folders are empty and filled by running Pict2Audio_multineural.ipynb. 
+  The three first folders are empty and filled by running pict2audio_img.ipynb/py. 
   **Test** contains some already drawn pictures to test the neural networks.
-  - **snd** : contains sounds provided by the nsynth dataset developped by Magenta, the
-   Google Team of Research and Developpment in Artificial Intelligence for music and sounds. 
+  - **snd** : contains sounds provided by the nsynth dataset developed by Magenta, the
+   Google Team of Research and Development in Artificial Intelligence for music and sounds. 
    These sounds are divided in **train**, **validation** and **test** datasets.
 
 - **src** contains the code implemented to answer the principal problematic of this project.
   - **interface** : contains the main files to implement a paint interface and its links with
    the neural networks.
   - **networks**, is divided in two parts :
-     - **googlecolab** contains the code to run under google colaboratory for every test with 
-     the GPU from google. The performances are great but the architecure of the code is not clear.
+     - **googlecolab** contains the code to run under Google Colab for every test with 
+     the GPU from Google. The performances are great but the architecture of the code is not clean.
      - **local** contains a clean code to run on your computer, but your hardware might not be
      efficient enough to obtain great performances.
      Each folder is divided in two folders : **img** contains the code of the neural networks 
@@ -57,7 +57,7 @@ are read and studied for this project. it contains the following documents :
 ## How to run the code
 - To install all the libraries
     - run : pip install -r requirements.txt
-    or install all the required librairies in a virtual environment with Anaconda
+    or install all the required libraries in a virtual environment with Anaconda
 
 - To train the networks : 
     - In *src/networks/local/snd*, run *pict2audio_snd.py* for sounds networks
@@ -68,7 +68,7 @@ are read and studied for this project. it contains the following documents :
     in audiosynthesis_dl/ a folder named models/ and move the neural networks in this folder. This 
     folder will be added soon with my own already-trained architectures. 
     
-    You can also train the networks by running under google colaboratory *pict2audio_img.ipynb* and 
+    You can also train the networks by running under Google Colab *pict2audio_img.ipynb* and 
     *pict2audio_snd.ipynb* in *src/networks/googlecolab/* .
     
 - To display the interface :
