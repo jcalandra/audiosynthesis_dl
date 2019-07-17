@@ -56,7 +56,7 @@ are read and studied for this project. it contains the following documents :
 
 ## How to run the code
 - To install all the libraries
-    - run : pip install -r requirements.txt
+    - run : *pip install -r requirements.txt*
     or install all the required libraries in a virtual environment with Anaconda
 
 - To train the networks : 
