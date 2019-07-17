@@ -1,0 +1,9 @@
+tk==8.6.9
+pillow==6.1.0
+keras==2.2.4
+tensorflow==1.13.1
+opencv==4.1.0
+numpy==1.16.4
+glob2==0.7
+librosa==0.6.3
+matplotlib==3.1.1

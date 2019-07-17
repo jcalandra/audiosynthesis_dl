@@ -55,6 +55,10 @@ are read and studied for this project. it contains the following documents :
      networks that aim to recognize features in sounds. 
 
 ## How to run the code
+- To install all the libraries
+    - run : pip install -r requirements.txt
+    or install all the required librairies in a virtual environment with Anaconda
+
 - To train the networks : 
     - In *src/networks/local/snd*, run *pict2audio_snd.py* for sounds networks
     - In *src/networks/local/img*, run *pict2audio_img.py* for images networks : this will also 
