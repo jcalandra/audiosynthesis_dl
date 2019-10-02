@@ -87,8 +87,9 @@ y_train_pitch, y_validation_pitch = network_img.categorical(y_train_pitch, y_val
 # --------------------------------------GENERATION OF THE PITCH NEURAL NETWORK----------------------------------------
 
 print('[INFO] generating PITCH NETWORK...')
+opt_pitch = keras.optimizers.Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
 model_pitch, hist_pitch = network_img.architecture(x_train, y_train_pitch, x_validation, y_validation_pitch, NB_PITCH,
-                                                   'model_pitch', opt='adam', nb_epoch=100)
+                                                   'model_pitch', opt=opt_pitch, nb_epoch=100)
 network_img.plot(hist_pitch)
 
 del y_train_pitch
@@ -129,7 +130,7 @@ y_train_color, y_validation_color = network_img.categorical(y_train_color, y_val
 
 print('[INFO] training COLOR NETWORK...')
 
-opt_color = keras.optimizers.Adam(lr=0.000035, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
+opt_color = keras.optimizers.Adam(lr=0.0001, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
 model_color, hist_color = network_img.architecture(x_train, y_train_color, x_validation, y_validation_color, NB_COLOR,
                                                    'model_color', opt=opt_color, nb_epoch=100)
 network_img.plot(hist_color)

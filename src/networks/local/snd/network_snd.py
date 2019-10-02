@@ -21,6 +21,8 @@ def architecture(x_train, y_train, x_validation, y_validation, nb_dense, saving_
     # (CONV => RELU) * 1 => POOL
     model.add(Conv2D(filters=32, kernel_size=(3, 3), strides=1, padding='valid', activation='relu'))
     model.add(BatchNormalization(axis=-1))
+    model.add(Conv2D(filters=32, kernel_size=(3, 3), strides=1, padding='valid', activation='relu'))
+    model.add(BatchNormalization(axis=-1))
     model.add(MaxPooling2D(pool_size=(3, 3), strides=None, padding='valid', data_format=None))
 
     # (CONV => RELU) * 2 => POOL

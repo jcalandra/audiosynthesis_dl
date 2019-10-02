@@ -105,8 +105,9 @@ y_train_thick, y_validation_thick = network_snd.categorical(y_train_thick, y_val
 
 # ---------------------------------------CREATION OF THE THICK NEURAL NETWORK-----------------------------------------
 
+opt_thick = keras.optimizers.Adam(lr=0.00005, beta_1=0.9, beta_2=0.999, epsilon=None, decay=0.0, amsgrad=False)
 model_thick, hist_thick = network_snd.architecture(x_train, y_train_thick, x_validation, y_validation_thick, NB_THICK,
-                                                   'model_thicksnd', opt='adam', nb_epoch=10)
+                                                   'model_thicksnd', opt=opt_thick, nb_epoch=10)
 network_snd.plot(hist_thick)
 
 del y_train_thick
