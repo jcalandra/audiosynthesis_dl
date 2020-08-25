@@ -38,9 +38,9 @@ img_path = gv.img_path
 
 # generating exactly the same path line for every color, pitch and thickness
 print('[INFO] generating training dataset...')
-# data_generator.generate_pict(NB_VERSION_TRAIN, 'train', 0, [1, 1, 1])
+data_generator.generate_pict(NB_VERSION_TRAIN, 'train', 0, [1, 1, 1])
 print('[INFO] generating validation dataset...')
-# data_generator.generate_pict(NB_VERSION_VALIDATION, 'validation', 0, [1, 1, 1])
+data_generator.generate_pict(NB_VERSION_VALIDATION, 'validation', 0, [1, 1, 1])
 
 # ---------------------------------------------LOADING THE PICTURES--------------------------------------------------
 print('[INFO] loading training dataset...')
