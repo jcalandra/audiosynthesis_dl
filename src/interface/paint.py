@@ -4,6 +4,7 @@ from tkinter import *
 from tkinter.colorchooser import askcolor
 import PIL
 from PIL import Image, ImageDraw, ImageTk
+import cv2
 import Pict2audio_link
 import audio2csv
 
@@ -116,7 +117,10 @@ class Paint:
 
     def get_sound(self):
         self.activate_button(self.sound_button)
-        self.img.save("img2analyse.png")
+        self.img.save("img2analyse_bgr.png")
+        srcRGB = cv2.imread("img2analyse_bgr.png")
+        destBGR = cv2.cvtColor(srcRGB, cv2.COLOR_RGB2BGR)
+        cv2.imwrite("img2analyse.png", destBGR)
         Pict2audio_link.main()
         # supprimer éventuellement l'image
         self.activate_button(self.pen_button)
